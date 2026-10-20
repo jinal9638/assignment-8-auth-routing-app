@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Multi-Page Authentication App – Routing, Protected Navigation & Testing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A robust, multi-page React application built with **React Router v6**, **Context API** for global state management and persistent user authentication, and comprehensive unit/integration testing using **React Testing Library** and **Jest**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Live Demo & Repository
 
-### `npm start`
+* **Live Deployment:** []
+* **GitHub Repository:** []
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Overview & Objectives
 
-### `npm test`
+This project implements industry-standard architecture for a modern web application:
+1. **Client-Side Routing:** Dynamic parameter extraction, active link state feedback, nested routes, and fallback 404 pages using `react-router-dom`.
+2. **Global Authentication Flow:** Centralized user authentication managed via `AuthContext` with client-side form validation and session persistence via `localStorage`.
+3. **Protected Route Navigation:** Conditional access guard components that preserve navigation intent and redirect unauthenticated users to the Login route.
+4. **Comprehensive Component & Integration Testing:** Unit tests for interactive components and end-to-end authentication flow simulations using React Testing Library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack & Key Libraries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Frontend Library:** React 18
+* **Routing:** React Router v6 (`BrowserRouter`, `Routes`, `Route`, `Navigate`, `NavLink`, `useParams`)
+* **State Management:** React Context API (`createContext`, `useContext`)
+* **Testing Framework:** Jest & React Testing Library (`@testing-library/react`, `@testing-library/user-event`)
+* **Build System:** `react-scripts` (Create React App configuration)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Folder Structure
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Auth_Routing_App_Jinal/
+├── package.json
+├── README.md
+├── screenshots/               # Application UI screenshots (Desktop, Tablet, Mobile)
+└── src/
+    ├── components/
+    │   ├── Counter.js         # Interactive counter component (Part C requirement)
+    │   ├── Navbar.js          # Navigation bar with dynamic active routes and logout trigger
+    │   └── ProtectedRoute.js  # Access guard wrapper for authenticated routes
+    ├── context/
+    │   └── AuthContext.js     # Global auth state manager (login, signup, logout, persistence)
+    ├── pages/
+    │   ├── About.js           # Public about page
+    │   ├── Dashboard.js       # Protected user dashboard
+    │   ├── Home.js            # Home landing page with counter demo
+    │   ├── Login.js           # Validated authentication form
+    │   ├── NotFound.js        # Fallback 404 page
+    │   ├── OrderDetails.js    # Dynamic route displaying order params (/order/:orderId)
+    │   ├── Profile.js         # Dynamic route displaying user profile params (/profile/:userId)
+    │   └── Signup.js          # Registration form with password match validation
+    ├── tests/
+    │   ├── AuthFlow.test.js   # Asynchronous authentication flow & context integration tests
+    │   ├── Counter.test.js    # Unit tests for button events and state boundary limits
+    │   └── ProtectedRoute.test.js # Access verification & redirection unit tests
+    ├── App.js                 # Primary application router layout
+    ├── App.css                # Fully responsive custom styling across breakpoints
+    ├── App.test.js            # Layout rendering integration test
+    ├── index.js               # Application entry point
+    └── setupTests.js          # Jest configuration & log suppression setup
