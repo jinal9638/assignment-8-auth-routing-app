@@ -6,8 +6,8 @@ A robust, multi-page React application built with **React Router v6**, **Context
 
 ## Live Demo & Repository
 
-* **Live Deployment:** []
-* **GitHub Repository:** []
+* **Live Deployment:** [https://assignment-8-auth-routing-app.vercel.app/]
+* **GitHub Repository:** [https://github.com/jinal9638/assignment-8-auth-routing-app]
 
 ---
 
